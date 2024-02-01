@@ -61,12 +61,8 @@ static void AddServices(WebApplicationBuilder builder)
 
 var app = builder.Build();
 
-if (app.Environment.IsProduction())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseHttpsRedirection();
