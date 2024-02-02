@@ -44,9 +44,12 @@ namespace SozlarJadvali.Controllers
 
         [HttpDelete("Delete-Word")]
         [Authorize]
-        public async ValueTask<ActionResult<Word>> DeleteWord(Word word)
+        public async ValueTask<ActionResult<Word>> DeleteWord(Guid id)
         {
-            return await this.wordService.RemoveWordAsync(word);
+            Word selectedWord =
+                await this.wordService.RetrieveWordByIdAsync(id);
+
+            return await this.wordService.RemoveWordAsync(selectedWord);
         }
     }
 }

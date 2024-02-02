@@ -9,13 +9,6 @@ namespace SozlarJadvali.Brokers.TokenBroker
 {
     public class TokenBroker : ITokeBroker
     {
-        private readonly IConfiguration configuration;
-
-        public TokenBroker(IConfiguration configuration)
-        {
-            this.configuration = configuration;
-        }
-
         public UserToken GenerateJWTToken(Admin admin)
         {
             var claims = new List<Claim>
