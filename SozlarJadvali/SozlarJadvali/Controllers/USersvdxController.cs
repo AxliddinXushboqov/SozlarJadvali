@@ -18,6 +18,7 @@ namespace SozlarJadvali.Controllers
             this.wordService = wordService;
         }
 
+
         [HttpGet("Get-All-sdvsdvs")]
         [EnableQuery]
         [EnableCors("AllowSpecificOrigin")]
